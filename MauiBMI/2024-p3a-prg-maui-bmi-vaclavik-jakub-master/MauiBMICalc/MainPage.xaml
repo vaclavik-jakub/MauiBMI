@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MauiBMICalc.MainPage"
+             BackgroundColor="LightBlue">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Levý sloupec pro vstupy -->
+        <StackLayout Grid.Column="0" Padding="10" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="400">
+            <Label Text="Hmotnost (kg)" />
+            <Entry x:Name="weightEntry" Keyboard="Numeric" Background="White"/>
+
+            <Label Text="Výška (cm)" />
+            <Entry x:Name="heightEntry" Keyboard="Numeric" Background="White" />
+
+            <Button Text="Vypočítat BMI" Clicked="OnCalculateClicked" Margin="20"/>
+        </StackLayout>
+
+        <!-- Pravý sloupec pro výstupy -->
+        <StackLayout Grid.Column="1" Padding="10" Spacing="20">
+            <Label Text="BMI" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold"/>
+            <Label x:Name="bmiLabel" FontSize="16" HorizontalOptions="Center" />
+
+            <Label Text="Category" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold"/>
+            <Label x:Name="bmiCategoryLabel" FontSize="16" HorizontalOptions="Center" />
+
+            <Image x:Name="bmiImage" HeightRequest="300" WidthRequest="300" Aspect="AspectFit" HorizontalOptions="Center" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
